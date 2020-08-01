@@ -24,7 +24,6 @@ function Player() {
 				console.log(err);
 			});
 	};
-
 	const move = (e) => {
 		e.preventDefault();
 		if (e.target.id === 'small' || true) {
@@ -57,7 +56,7 @@ function Player() {
 								data-link={song.link}
 								data-pic={song.artist.picture}
 								onClick={playSong}>
-								{song.title}
+								{song.title} By:{song.artist.name}
 							</li>
 						);
 					})}

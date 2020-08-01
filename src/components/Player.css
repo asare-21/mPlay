@@ -4,26 +4,16 @@
     position: absolute;
     top: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
 .player__search {
     padding: 10px;
     display: flex;
-    flex: 1;
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
     justify-content: center;
     align-items: center;
-    /* border: 1px solid black; */
 }
 
 .player__search small {
@@ -70,14 +60,6 @@
 .player__controls {
     height: 500px;
     width: 400px;
-    position: absolute;
-    top: 50%;
-    right: 20%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
     display: grid;
     place-items: center;
 }
@@ -131,17 +113,9 @@ small {
     height: 500px;
     overflow: hidden;
     overflow-y: scroll;
-    position: absolute;
-    top: 50%;
-    left: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
     border-radius: 10px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
     -webkit-border-radius: 10px;
@@ -160,9 +134,11 @@ small {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* place-items: center; */
     overflow-y: scroll;
-    position: absolute;
+
 }
 
 .player__songs ul li {
@@ -180,13 +156,29 @@ small {
     background: rgba(223, 218, 218, 0.596);
 }
 
-@media screen and (maxwidth:1024px) {
+@media screen and (max-width:1024px) {
     .player {
         display: grid;
-        grid-template-columns: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
     }
 
-    .player__songs {
-        position: relative;
+}
+
+@media screen and (max-width:800px) {
+    .player {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+        row-gap: 20px;
+        padding: 30px;
     }
+
+}
+
+@media screen and (max-width:480px) {
+    .App {
+        width: 100%;
+    }
+
 }
